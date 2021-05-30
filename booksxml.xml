@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<BOOK year="2020">
+    <name>Java Head First</name>
+    <Vendor_Code>1234567</Vendor_Code>
+    <Same_Books>
+        <sameBooks year="2003">
+            <name>Harry Potter</name>
+            <Vendor_Code>90234</Vendor_Code>
+            <Same_Books/>
+        </sameBooks>
+        <sameBooks year="1925">
+            <name>The Great Gatsby</name>
+            <Vendor_Code>3845</Vendor_Code>
+            <Same_Books/>
+        </sameBooks>
+    </Same_Books>
+</BOOK>
