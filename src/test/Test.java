@@ -1,48 +1,29 @@
 package test;
 
 public class Test {
-    private static int counter;
+    public static void main(String[] args) {
+        new B();
+    }
+}
 
-    public static void main(String[] args) throws InterruptedException {
-        Test test = new Test();
-        Test test2 = new Test();
-
-        test.doWork();
-        test2.doWork();
+class A {
+    void f() {
+        System.out.print("A.f() ");
     }
 
-    public void doWork() throws InterruptedException {
-        Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0; i < 10000; i++) {
-                    increment();
-                }
-            }
-        });
+    A() {
+        System.out.print("BeforeA.f() ");
+        f();
+        System.out.print("AfterA.f() ");
+    }
+}
 
-        Thread thread2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0; i < 10000; i++) {
-                    increment();
-                }
-            }
-        });
-
-        thread1.start();
-        thread2.start();
-
-        thread1.join();
-        thread2.join();
-
-        System.out.println(counter);
-
+class B extends A {
+    B() {
+        System.out.print("ConsB ");
     }
 
-    private synchronized void increment() {
-//        String name = Thread.currentThread().getName();
-//        System.out.println(name);
-        counter++;
+    void f() {
+        System.out.print("B.f() ");
     }
 }
